@@ -5,8 +5,8 @@ import java.util.Random;
 public class Randomizer {
     // properties en methods om via een random object ‘test’ data te genereren.
     // instance variables -
-    private static Random random = new Random();
-    private static final int MAX_CAMERAS = 50;
+    private static final Random random = new Random();
+    private static final int MAX_CAMERAS = 150;
     private static final int MAX_PATROUILLES = 15;
     private static final int MAX_VOERTUIGEN = 500;
 
@@ -27,7 +27,7 @@ public class Randomizer {
     }
 
     public static String getMerk() {
-        String merken[] = { "Ford", "VW", "Hyundai", "Opel", "Chevrolet",
+        String[] merken = {"Ford", "VW", "Hyundai", "Opel", "Chevrolet",
                 "Citroën", "Renault", "Seat", "Skoda", "Toyota", "Lada",
                 "Mitsubishi", "Nissan", "Dacia", "Jaguar", "Mercedes", "BMW",
                 "Porche", "Range Rover"};
@@ -82,7 +82,7 @@ public class Randomizer {
     }
 
     public static Locatie getALocatie(){
-        return (Locatie)getLocaties().get(random.nextInt(locaties.size()));
+        return getLocaties().get(random.nextInt(locaties.size()));
     }
 
     public static IVoertuig seinGestolenVoertuig(LinkedList<IVoertuig> voertuigen){

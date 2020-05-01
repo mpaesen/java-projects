@@ -8,13 +8,13 @@ import java.math.BigDecimal;
 
 /**
  * Abstract class Voertuig - write a description of the class here
- * 
+ *
  * @author: Mathy Date: 21/09/2003
  */
 public abstract class Voertuig extends VervoerMiddel {
 	private final int AANTAL_WIELEN;
 
-	private Wiel wielen[];
+	private final Wiel[] wielen;
 
 	/**
 	 * @param cat
@@ -35,7 +35,7 @@ public abstract class Voertuig extends VervoerMiddel {
 
 	public String toString() {
 		return "\n\tDe Categorie is " + getCategory() + " "
-				+ "met als waarde �" + getWaarde();
+				+ "met als waarde " + "\u20AC" + getWaarde();
 	}
 
 	/**
@@ -53,8 +53,6 @@ public abstract class Voertuig extends VervoerMiddel {
 	/**
 	 * Gives all wheels
 	 * 
-	 * @param y
-	 *            index in array wielen
 	 * @return the selected Wheel
 	 */
 	public String getWielen() {

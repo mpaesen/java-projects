@@ -42,7 +42,7 @@ public class TestIntelligenteCameras {
      */
     private static void configureerData() {
         dispatch.setCameras(cameras);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 60; i++) {
             geseind.add(Randomizer.seinGestolenVoertuig(voertuigen));
             geseind.add(Randomizer.seinNietVerzekerdVoertuig(voertuigen));
         }

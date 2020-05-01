@@ -47,7 +47,7 @@ public final class ConfigureDatabase {
 
     private static Properties getProperties(File file) {
         try {
-            //p = System.getProperties(file);
+
             p = new Properties();
             p.load(new FileInputStream(file));
         } catch (FileNotFoundException e) {
