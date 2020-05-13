@@ -1,15 +1,14 @@
 package model;
 
-import java.math.BigDecimal;
-
-import utilities.Category;
-
 import model.deuren.Deur;
 import model.kleuren.Kleur;
 import model.kleuren.Kleurbaar;
 import model.kleuren.Kleuren;
 import model.motoren.Motor;
 import model.vensters.Venster;
+import utilities.Category;
+
+import java.math.BigDecimal;
 
 public abstract class VervoerMiddel extends Object implements Kleurbaar {
 
@@ -17,8 +16,8 @@ public abstract class VervoerMiddel extends Object implements Kleurbaar {
 	private BigDecimal waarde;
 	private Kleur kleur;
 	protected Motor motor;
-	private Venster vensters[];
-	private Deur deuren[];
+	private Venster[] vensters;
+	private Deur[] deuren;
 
 	/**
 	 * @param category
@@ -127,7 +126,6 @@ public abstract class VervoerMiddel extends Object implements Kleurbaar {
 	/**
 	 * Gives all doors
 	 * 
-	 * @param y index in array wielen
 	 * @return the selected Wheel
 	 */
 	public String getDeuren() {
@@ -151,8 +149,6 @@ public abstract class VervoerMiddel extends Object implements Kleurbaar {
 	/**
 	 * Gives all windows
 	 * 
-	 * @param y
-	 *            index in array wielen
 	 * @return the selected Wheel
 	 */
 	public String getVensters() {
