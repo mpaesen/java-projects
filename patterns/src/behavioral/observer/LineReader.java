@@ -2,15 +2,14 @@ package behavioral.observer;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
 
 public class LineReader implements LineSubject {
-	private Scanner in;
-	private HashMap<LineObserver, LineObserver> observers;
-	private int maxLines;
+	private final Scanner in;
+	private final HashMap<LineObserver, LineObserver> observers;
+	private final int maxLines;
 	private String line;
 
 	public LineReader(InputStream is, int maxLines) throws IOException {
@@ -48,13 +47,15 @@ public class LineReader implements LineSubject {
 		observers.remove(observer);
 	}
 
-	public void start() throws IOException {
+	public void start(int max) throws IOException {
 		// read from the console and notify the listeners
+		int count = 0;
 		do {
 			line = in.nextLine();
+			count++;
 			if (line != null) {
 				notifyObservers();
 			}
-		} while (line != null);
+		} while (count <= max);
 	}
 }

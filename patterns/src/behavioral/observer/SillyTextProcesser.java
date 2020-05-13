@@ -28,14 +28,11 @@ public class SillyTextProcesser {
 			reader.addObserver(bar);
 			reader.addObserver(archiver);
 			reader.addObserver(counter);
-			
-			System.out.println("Enter "+maxLines+" lines of text (^Z to end):");
-			reader.start();
+
+			System.out.println("Enter " + maxLines + " lines of text (^Z to end):");
+			reader.start(maxLines);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-
 	}
-
 }
